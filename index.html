@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ứng dụng tình yêu của Anh Bé Chúi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #ffd6f5 0, #ff9ad6 30%, #ff6fb1 60%, #ff3f8e 100%);
+      overflow: hidden;
+    }
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.35;
+      animation: floatUp 8s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 0.6; }
+      100% { transform: translateY(-120vh) scale(1.4); opacity: 0; }
+    }
+    .card {
+      position: relative;
+      z-index: 2;
+      width: 95%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      padding: 24px 20px 28px;
+      box-shadow: 0 18px 40px rgba(255, 0, 123, 0.35);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: linear-gradient(45deg, #ff7fd1, #ff3f8e);
+      color: #fff;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ff2e8c;
+      text-shadow: 0 0 10px rgba(255, 46, 140, 0.4);
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: #ff6fa8;
+      margin-bottom: 14px;
+    }
+    .message-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 14px 16px;
+      border: 1px dashed #ff9ac8;
+      max-height: 280px;
+      overflow-y: auto;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+    .line { margin-bottom: 8px; }
+    .line.strong { font-weight: 600; color: #ff2e7a; }
+    .signature {
+      margin-top: 10px;
+      text-align: right;
+      font-size: 13px;
+      font-style: italic;
+      color: #ff4b7f;
+    }
+    .footer {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    .buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      border: none;
+      outline: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(45deg, #ff7fd1, #ff3f8e);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(255, 0, 123, 0.35);
+      white-space: nowrap;
+    }
+    .btn.secondary {
+      background: linear-gradient(45deg, #ffc3f1, #ff82c6);
+      color: #8b1a4c;
+      box-shadow: 0 6px 14px rgba(255, 130, 198, 0.4);
+    }
+    .status {
+      font-size: 12px;
+      color: #ff3f8e;
+      text-align: center;
+      min-height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">Happy Birthday</span>
+    </div>
+    <h1 class="title">Chây chi moa moaa 🎂</h1>
+    <p class="subtitle">Ứng dụng tình yêu của Anh bé chúi dành riêng cho Chây Chi 💗</p>
+
+    <div class="message-box">
+      <p class="line strong">Chây chi moa moaa sinh nhật vui vẻ 💖</p>
+      <p class="line">
+        Anh bé thời gian qua đã nàm chây chi moa moaa tủn chưn nhiều, khóc nhiều,
+        anh bé xin lỗi chây chi moa moa nhiều lắm...
+      </p>
+      <p class="line">
+        Anh bé đang thay đổi từng ngày, chây chi đừng ghéc a bé nhiều quá nhóo 🥺
+      </p>
+      <p class="line">
+        Tuổi mới, a bé chúi chúc chây chi moa moaa toa đùm xinh đẹp nè, cười toe toét nè,
+        vuii vẻ nè, hạnh phúc chìm nim lunnn 🌈
+      </p>
+      <p class="line strong">A bé iuu chây chii nhìu lắm 💞</p>
+      <p class="signature">Ký tên: Anh bé chúi :&gt;</p>
+    </div>
+
+    <div class="footer">
+      <div class="buttons">
+        <button class="btn" onclick="setStatus('Ômmm anh bé 1 cái thiệt chặt nè 🤗')">
+          Ôm anh bé
+        </button>
+        <button class="btn secondary" onclick="setStatus('Hôn cái cãi nhau ít lại nhaaa 😚')">
+          Hôn cái điii
+        </button>
+        <button class="btn" onclick="setStatus('Không ghéc nữa, tụi mình làm lại thiệt ngoan nha 🥹💗')">
+          Không ghéc nữa đâu
+        </button>
+      </div>
+      <p class="status" id="status"></p>
+    </div>
+  </div>
+
+  <script>
+    function createHearts() {
+      const container = document.getElementById("hearts");
+      const count = 16;
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.textContent = "❤";
+        const left = Math.random() * 100;
+        const delay = Math.random() * 8;
+        const size = 16 + Math.random() * 16;
+        heart.style.left = left + "vw";
+        heart.style.bottom = "-40px";
+        heart.style.fontSize = size + "px";
+        heart.style.animationDelay = delay + "s";
+        container.appendChild(heart);
+      }
+    }
+    function setStatus(text) {
+      document.getElementById("status").textContent = text;
+    }
+    createHearts();
+  </script>
+</body>
+</html>
